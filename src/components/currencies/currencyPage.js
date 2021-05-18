@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import PuffLoader from "react-spinners/PuffLoader";
 
-import PageBody from "./pageBody";
 import CurrencyPageHeading from "./pageHeading";
+import CurrencyGraph from "./currencyGraph";
 
 export default function CoinPage(props) {
     const initialCoinState = {
@@ -27,10 +27,12 @@ export default function CoinPage(props) {
     return coin.loading ? (
         <PuffLoader size="20" color="#7b2cbf"/>
     ) : (
+
         <div className="container mx-auto my-5">
             {coin.map((token) => (
                 <div key={token.Symbol}>
                     <CurrencyPageHeading
+                        id={token.id}
                         name={token.Name}
                         contract={token.Contract}
                         symbol={token.Symbol}
@@ -38,11 +40,13 @@ export default function CoinPage(props) {
                         website={token.WebsiteLink}
                         twitter={token.TwitterLink}
                         chat={token.ChatLink}
-                    />
-                    <PageBody
-                        name={token.Name}
                         descrption={token.Description}
-                        symbol={token.Symbol}
+                        upVotes={token.UpVotes}
+                        downVotes={token.DownVotes}
+                    />
+                    <CurrencyGraph
+                        name={token.Symbol}
+                        contractAddres={token.Contract}
                     />
                 </div>
                 ))}

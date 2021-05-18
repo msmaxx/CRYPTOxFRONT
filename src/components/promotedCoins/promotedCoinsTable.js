@@ -102,7 +102,7 @@ const PromotedCoinsTable = (props) => {
                                             className="text-sm text-gray-500">{token.LaunchDate}</div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <GetVotingButtons symbol={token.Symbol}/>
+                                        <GetVotingButtons symbol={token.Symbol} id={token.id} upVotes={token.UpVotes} downVotes={token.DownVotes}/>
                                     </td>
                                 </tr>
                             ))}

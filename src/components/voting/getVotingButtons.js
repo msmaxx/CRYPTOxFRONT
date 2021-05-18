@@ -2,8 +2,11 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import PuffLoader from "react-spinners/PuffLoader";
 
+export default function GetVotingButtons({symbol, id, upVotes, downVotes}) {
 
-export default function GetVotingButtons({symbol}){
+    const [loading, setLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
+    const [data, setData] = useState(null);
 
     const initialCoinDataState = {
         coin: {},
@@ -15,7 +18,7 @@ export default function GetVotingButtons({symbol}){
 
     useEffect(() => {
         const getCoinData = async () => {
-            const { data } = await axios(
+            const {data} = await axios(
                 `http://localhost:1337/coin-lists/?Symbol=${symbol}`,
             )
             setCoinData(data)
@@ -23,34 +26,100 @@ export default function GetVotingButtons({symbol}){
         getCoinData()
     }, [])
 
-    const votes = {
-        Symbol: {symbol},
-        UpVotes: + 1
+    function refreshPage() {
+        window.location.reload(false);
     }
 
+    const handleDownSubmit = () => {
+        setLoading(true);
+        setIsError(false);
+        const newDownVotes = downVotes + 1
+        const data = {
+            id: {id},
+            DownVotes: newDownVotes,
+        }
+        axios.put(`http://localhost:1337/coin-lists/${id}`, data).then(res => {
+            setData(res.data);
+            setLoading(false);
+            localStorage.setItem(symbol, 'DOWN');
+            refreshPage();
+        }).catch(err => {
+            setLoading(false);
+            setIsError(true);
+        });
+    }
 
-    return coinData.loading ? (
-        <PuffLoader size="20" color="#7b2cbf"/>
-    ) : (
-        <div>
-            {coinData.map((token) => (
-                <ul className="flex">
-                    <li className="mx-1 px-3 py-2 bg-gray-200 hover:bg-gray-700 rounded-lg">
-                        <a className="flex items-center">
-                            <span className="mx-1">👎</span>
-                        </a>
-                    </li>
-                    <li className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 rounded-lg">
-                        <a className="font-medium">{token.UpVotes - token.DownVotes}</a>
-                    </li>
+    const handleUpSubmit = () => {
+        setLoading(true);
+        setIsError(false);
+        const newUpVotes = upVotes + 1
+        const data = {
+            id: {id},
+            UpVotes: newUpVotes,
+        }
+        axios.put(`http://localhost:1337/coin-lists/${id}`, data).then(res => {
+            setData(res.data);
+            setLoading(false);
+            localStorage.setItem(symbol, 'UP');
+            refreshPage();
+        }).catch(err => {
+            setLoading(false);
+            setIsError(true);
+        });
+    }
 
-                    <li className="mx-1 px-3 py-2 bg-gray-200  hover:bg-gray-700 rounded-lg">
-                        <a className="flex items-center font-bold" href="#">
-                            <span className="mx-1">👍</span>
-                        </a>
-                    </li>
-                </ul>
-            ))}
-        </div>
-    )
+    if (localStorage.getItem(symbol) !== null) {
+        return coinData.loading ? (
+            <PuffLoader size="20" color="#7b2cbf"/>
+        ) : (
+            <div>
+                {coinData.map((token) => (
+                    <ul className="flex">
+                        <li className="mx-1 px-3 py-2 bg-gray-200 hover:bg-gray-700 rounded-lg">
+                            <a className="flex items-center cursor-not-allowed">
+                                <span className="mx-1"> 👎 </span>
+                            </a>
+                        </li>
+                        <li className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 text-l font-bold rounded-lg">
+                            <a className="font-medium">{token.UpVotes - token.DownVotes}</a>
+                        </li>
+
+                        <li className="mx-1 px-3 py-2 bg-gray-200  hover:bg-gray-700 rounded-lg">
+                            <a className="flex items-center cursor-not-allowed">
+                                <span className="mx-1"> 👍 </span>
+                            </a>
+                        </li>
+                    </ul>
+                ))}
+            </div>
+
+        )
+    } else {
+        return coinData.loading ? (
+            <PuffLoader size="20" color="#7b2cbf"/>
+        ) : (
+            <div>
+                {coinData.map((token) => (
+                    <ul className="flex">
+                        <li className="mx-1 px-3 py-2 bg-gray-200 hover:bg-gray-700 rounded-lg">
+                            <a className="flex items-center cursor-pointer" onClick={handleDownSubmit}>
+                                <span className="mx-1"> 👎 </span>
+                            </a>
+                        </li>
+                        <li className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 text-l font-bold rounded-lg">
+                            <a className="font-medium">{token.UpVotes - token.DownVotes}</a>
+                        </li>
+
+                        <li className="mx-1 px-3 py-2 bg-gray-200  hover:bg-gray-700 rounded-lg">
+                            <a className="flex items-center cursor-pointer" onClick={handleUpSubmit}>
+                                <span className="mx-1"> 👍 </span>
+                            </a>
+                        </li>
+                    </ul>
+                ))}
+            </div>
+
+        )
+    }
+
 }

@@ -38,7 +38,7 @@ export default function GetVotingButtons({symbol, id, upVotes, downVotes}) {
             id: {id},
             DownVotes: newDownVotes,
         }
-        axios.put(`http://localhost:1337/coin-lists/${id}`, data).then(res => {
+        axios.put(`https://cryptox-backend.herokuapp.com/coin-lists/${id}`, data).then(res => {
             setData(res.data);
             setLoading(false);
             localStorage.setItem(symbol, 'DOWN');
@@ -57,7 +57,7 @@ export default function GetVotingButtons({symbol, id, upVotes, downVotes}) {
             id: {id},
             UpVotes: newUpVotes,
         }
-        axios.put(`http://localhost:1337/coin-lists/${id}`, data).then(res => {
+        axios.put(`https://cryptox-backend.herokuapp.com/coin-lists/${id}`, data).then(res => {
             setData(res.data);
             setLoading(false);
             localStorage.setItem(symbol, 'UP');

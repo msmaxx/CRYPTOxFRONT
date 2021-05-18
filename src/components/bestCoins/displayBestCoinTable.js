@@ -3,6 +3,7 @@ import BestCoinsTable from "./bestCoinsTable";
 import WithTableLoading from "../withTableLoading";
 import axios from "axios";
 
+
 function DisplayBestCoinTable() {
     const ListLoading = WithTableLoading(BestCoinsTable);
     const [appState, setAppState] = useState({
@@ -11,7 +12,7 @@ function DisplayBestCoinTable() {
     });
 
     useEffect(() => {
-        axios.get("http://localhost:1337/coin-lists/?_sort=UpVotes:Desc&Promoted=false").then(response => {
+        axios.get("https://cryptox-backend.herokuapp.com/coin-lists/?_sort=UpVotes:Desc&Promoted=false").then(response => {
             setAppState({loading: false, coins: response.data});
         });
     }, [setAppState]);

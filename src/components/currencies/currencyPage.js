@@ -16,7 +16,7 @@ export default function CoinPage(props) {
     useEffect(() => {
         const getCoin = async () => {
             const { data } = await axios(
-                `http://localhost:1337/coin-lists/?Symbol=${props.match.params.id}`,
+                `https://cryptox-backend.herokuapp.com/coin-lists/?Symbol=${props.match.params.id}`,
             )
             setCoin(data)
         }

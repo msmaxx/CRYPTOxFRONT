@@ -11,7 +11,7 @@ function DisplayPromotedCoinsTable() {
     });
 
     useEffect(() => {
-        axios.get("http://localhost:1337/coin-lists/?_sort=UpVotes:Desc&Promoted=true").then(response => {
+        axios.get("https://cryptox-backend.herokuapp.com/coin-lists/?_sort=UpVotes:Desc&Promoted=true").then(response => {
             setAppState({loading: false, coins: response.data});
         });
     }, [setAppState]);

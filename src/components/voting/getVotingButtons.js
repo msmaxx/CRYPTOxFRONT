@@ -19,7 +19,7 @@ export default function GetVotingButtons({symbol, id, upVotes, downVotes}) {
     useEffect(() => {
         const getCoinData = async () => {
             const {data} = await axios(
-                `http://localhost:1337/coin-lists/?Symbol=${symbol}`,
+                `https://cryptox-backend.herokuapp.com/coin-lists/?Symbol=${symbol}`,
             )
             setCoinData(data)
         }

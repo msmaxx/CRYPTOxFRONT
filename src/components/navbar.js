@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 
 
 import {Fragment} from 'react'
-import {Disclosure, Menu, Transition} from '@headlessui/react'
+import {Disclosure} from '@headlessui/react'
 import {MenuIcon, XIcon} from '@heroicons/react/outline'
 
 import Logo from '../assets/logo.png'
@@ -32,7 +32,7 @@ export default function Navbar() {
                                         <div className="ml-10 flex items-baseline space-x-4">
 
                                             <Link to="/"><a href="#"
-                                               className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">
+                                               className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                                                 Cryptocurrencies
                                             </a></Link>
                                             <Link to='/promote'><a href="#"
@@ -66,7 +66,7 @@ export default function Navbar() {
                         <Disclosure.Panel className="md:hidden">
                             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
 
-                                <Link to="/"><a href="#" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">
+                                <Link to="/"><a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                                     Cryptocurrencies
                                 </a></Link>
                                 <Link to="/promote/"><a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">

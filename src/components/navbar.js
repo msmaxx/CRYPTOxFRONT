@@ -1,13 +1,9 @@
 import {Link} from "react-router-dom";
 
-
-import {Fragment} from 'react'
 import {Disclosure} from '@headlessui/react'
 import {MenuIcon, XIcon} from '@heroicons/react/outline'
 
 import Logo from '../assets/logo.png'
-
-const navigation = ['Cryptocurrencies', 'Exchanges', 'Promote', 'Add new coin']
 
 export default function Navbar() {
     return (

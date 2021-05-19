@@ -57,7 +57,7 @@ export default function CurrencyPageHeading({name, contract, symbol, logo, chat,
                     </div>
 
 
-                    <div className="sm:ml-3">
+                    <div className="sm:flex">
                         <GetVotingButtons symbol={symbol} id={id} upVotes={upVotes} downVotes={downVotes}/>
                     </div>
 

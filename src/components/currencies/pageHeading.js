@@ -41,7 +41,9 @@ export default function CurrencyPageHeading({name, contract, symbol, logo, chat,
                             <h2 className="text-xl font-semibold">
                                 <GetPrice contractAddress={contract}/>
                             </h2>
+                            <div className="hidden sm:block ml-3 flex-1 mx-5">
                             <Get24HChange contractAddress={contract}/>
+                        </div>
                         </div>
                     </div>
 
@@ -57,7 +59,7 @@ export default function CurrencyPageHeading({name, contract, symbol, logo, chat,
                     </div>
 
 
-                    <div className="sm:flex">
+                    <div className="flex-wrap">
                         <GetVotingButtons symbol={symbol} id={id} upVotes={upVotes} downVotes={downVotes}/>
                     </div>
 
@@ -66,9 +68,10 @@ export default function CurrencyPageHeading({name, contract, symbol, logo, chat,
 
 
             <div className="container flex flex-wrap mx-auto items-center">
-                <div className="flex-1">
-                    <button type="button"
-                            className="my-2 bg-purple-100 text-purple-600 p-2 rounded  leading-none flex items-center "
+
+                <div className="flex-wrap">
+
+                    <button className="flex-wrap my-2 bg-purple-100 text-purple-600 p-2 rounded leading-none flex items-center"
                             onClick={() => {
                                 navigator.clipboard.writeText(contract)
                             }}>
@@ -77,7 +80,9 @@ export default function CurrencyPageHeading({name, contract, symbol, logo, chat,
                         <BiCopy/>
                     </button>
 
-                    <div className="inline-flex">
+
+
+                    <div className="flex-nowrap">
                         <button
                             className="inline-flex items-center bg-purple-200 hover:bg-purple-300 text-purple-700 font-medium py-2 px-4 rounded-l"
                             onClick={() => openInNewTab(website)}>
@@ -106,6 +111,8 @@ export default function CurrencyPageHeading({name, contract, symbol, logo, chat,
                             <span className="mx-2">BscScan</span>
                         </button>
                     </div>
+
+
                     <div className="my-4">
                         <button className="inline-flex items-center bg-yellow-100
                 hover:bg-yellow-200 text-yellow-800 font-medium py-2 px-4 rounded-l"

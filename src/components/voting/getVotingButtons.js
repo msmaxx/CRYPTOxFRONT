@@ -74,7 +74,7 @@ export default function GetVotingButtons({symbol, id, upVotes, downVotes}) {
         ) : (
             <div>
                 {coinData.map((token) => (
-                    <ul className="flex">
+                    <ul className="inline-flex w-auto my-2 mx-auto">
                         <li className="mx-1 px-3 py-2 bg-gray-200 hover:bg-gray-700 rounded-lg">
                             <a className="flex items-center cursor-not-allowed">
                                 <span className="mx-1"> 👎 </span>

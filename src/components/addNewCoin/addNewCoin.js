@@ -14,7 +14,7 @@ export default function AddNewCoin() {
             <section className="text-gray-600 body-font relative">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="flex flex-col text-center w-full mb-12">
-                        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Add your coin in our platform!</h1>
+                        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Add your coin in our platform! !(temporarily suspended!)!</h1>
                         <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Send us an application for consideration to add your coin to our system.</p>
                     </div>
                     <div className="lg:w-1/2 md:w-2/3 mx-auto">

@@ -8,7 +8,7 @@ export default function GetPrice({contractAddress}) {
 
     useEffect(() => {
         axios.get(`https://api.dex.guru/v1/tokens/${contractAddress}-bsc/`).then(response => {
-            let price = response.data['priceUSD'].toFixed(9);
+            let price = response.data['priceUSD'].toFixed(10);
             setPrice("$" + price);
             setLoading(false);
         });

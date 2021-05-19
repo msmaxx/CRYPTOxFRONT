@@ -2,6 +2,13 @@
 import { ImTelegram } from 'react-icons/im';
 import promoteImage from '../../assets/promote.jpg'
 
+
+
+const openInNewTab = (url) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+}
+
 export default function PromotePage() {
     return (
 
@@ -23,7 +30,7 @@ export default function PromotePage() {
                         <p className="mb-8 leading-relaxed">Want to promote your coin so everyone knows about it? You have the opportunity to be
                             in the first place in the table of promoted coins and tokens, ahead of all other coins!</p>
                         <div className="flex justify-center">
-                            <button
+                            <button onClick={() => openInNewTab(`http://t.me/cryptox_admin`)}
                                 className="items-center inline-flex text-white bg-purple-300 border-0 py-2 px-6 text-purple-800 focus:outline-none hover:bg-purple-400 rounded text-lg">
                                 <ImTelegram/>
                                 <span className="mx-2">Write to us</span>

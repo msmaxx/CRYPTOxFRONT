@@ -75,13 +75,13 @@ export default function GetVotingButtons({symbol, id, upVotes, downVotes}) {
             <div>
                 {coinData.map((token) => (
                     <ul className="inline-flex w-auto my-2 mx-auto">
-                        <li className="mx-1 px-3 py-2 bg-gray-200 hover:bg-gray-700 rounded-lg">
+                        {/*<li className="mx-1 px-3 py-2 bg-gray-200 hover:bg-gray-700 rounded-lg">
                             <a className="flex items-center cursor-not-allowed">
                                 <span className="mx-1"> 👎 </span>
                             </a>
-                        </li>
+                        </li>*/}
                         <li className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 text-l font-bold rounded-lg">
-                            <a className="font-medium">{token.UpVotes - token.DownVotes}</a>
+                            <a className="font-medium">{token.UpVotes}</a>
                         </li>
 
                         <li className="mx-1 px-3 py-2 bg-gray-200  hover:bg-gray-700 rounded-lg">
@@ -101,13 +101,13 @@ export default function GetVotingButtons({symbol, id, upVotes, downVotes}) {
             <div>
                 {coinData.map((token) => (
                     <ul className="flex">
-                        <li className="mx-1 px-3 py-2 bg-gray-200 hover:bg-gray-700 rounded-lg">
+                       {/* <li className="mx-1 px-3 py-2 bg-gray-200 hover:bg-gray-700 rounded-lg">
                             <a className="flex items-center cursor-pointer" onClick={handleDownSubmit}>
                                 <span className="mx-1"> 👎 </span>
                             </a>
-                        </li>
+                        </li>*/}
                         <li className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 text-l font-bold rounded-lg">
-                            <a className="font-medium">{token.UpVotes - token.DownVotes}</a>
+                            <a className="font-medium">{token.DownVotes}</a>
                         </li>
 
                         <li className="mx-1 px-3 py-2 bg-gray-200  hover:bg-gray-700 rounded-lg">

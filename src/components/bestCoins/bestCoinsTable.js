@@ -5,11 +5,13 @@ import GetVol24h from "../data/getVol24h";
 import Get24HChange from "../data/get24HChange";
 import Get24HVolumeChange from "../data/get24HVolumeChange";
 import GetVotingButtons from "../voting/getVotingButtons";
+import PuffLoader from "react-spinners/PuffLoader";
+import React from "react";
 
 const BestCoinsTable = (props) => {
     const {coins} = props;
 
-    if (!coins || coins.length === 0) return <p>No best coins.</p>;
+    if (!coins || coins.length === 0) return <PuffLoader size="30" color="#7b2cbf"/>;
     return (
 
         <div className="flex flex-col">

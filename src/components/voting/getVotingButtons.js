@@ -70,7 +70,7 @@ export default function GetVotingButtons({symbol, id, upVotes, downVotes}) {
 
     if (localStorage.getItem(symbol) !== null) {
         return coinData.loading ? (
-            <PuffLoader size="20" color="#7b2cbf"/>
+            <PuffLoader size="30" color="#7b2cbf"/>
         ) : (
             <div>
                 {coinData.map((token) => (

@@ -7,7 +7,6 @@ import Footer from "./components/footer";
 
 function App() {
   return(
-      <>
         <Router>
             <Navbar/>
             <Route exact path="/" component={HomePage} />
@@ -16,8 +15,6 @@ function App() {
             <Route path="/add-new-coin/" component={CoinPage} />
             <Footer/>
         </Router>
-
-      </>
   );
 }
 

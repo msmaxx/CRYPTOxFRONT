@@ -16,7 +16,7 @@ export default function Get24HChange({contractAddress}) {
     }, []);
 
     if (isLoading) {
-        return <PuffLoader size="20" color="#7b2cbf"/>
+        return <PuffLoader size="30" color="#7b2cbf"/>
     }
 
     if (priceChange < 0) {

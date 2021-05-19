@@ -77,8 +77,7 @@ export default function CurrencyPageHeading({
             </div>
 
 
-            <div className="flex-wrap">
-
+            <div className="flex-nowrap">
                 <button className="flex-wrap my-2 bg-purple-100 text-purple-600 p-2 rounded flex items-center"
                         onClick={() => {
                             navigator.clipboard.writeText(contract)
@@ -86,7 +85,6 @@ export default function CurrencyPageHeading({
                     <span className="mx-2 bg-purple-200 p-1 rounded text-purple-500 text-xs ml-2">{contract}</span>
                     <BiCopy/>
                 </button>
-
             </div>
 
                 <div className="flex-nowrap">

@@ -13,9 +13,6 @@ import AddNewCoin from "./components/addNewCoin/addNewCoin";
 
 
 function App() {
-    useEffect(() => {
-        nightwind.initNightwind()
-    }, []);
   return(
       <div>
           <Router>

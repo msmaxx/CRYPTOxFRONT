@@ -11,11 +11,10 @@ import Footer from "./components/footer";
 import PromotePage from "./components/promote/promotePage";
 import AddNewCoin from "./components/addNewCoin/addNewCoin";
 
-eval(nightwind.init());
-
 function App() {
   return(
       <div>
+          {nightwindInit}
           <Router>
             <Navbar/>
             <Route exact path="/" component={HomePage} />
@@ -27,5 +26,29 @@ function App() {
       </div>
   );
 }
+
+const nightwindInit = `
+(function() {
+  function getInitialColorMode() {
+    const persistedColorPreference = window.localStorage.getItem('nightwind-mode');
+    if (typeof persistedColorPreference === 'string') {
+      return persistedColorPreference;
+    }
+    const mql = window.matchMedia('(prefers-color-scheme: dark)');
+    if (typeof mql.matches === 'boolean') {
+      if (mql.matches) {
+        window.localStorage.setItem("nightwind-mode", "dark");
+        return "dark";
+      } else {
+        window.localStorage.setItem("nightwind-mode", "light");
+        return "light";
+      }
+    }
+    return 'light';
+  }
+  getInitialColorMode() == 'light' ? document.documentElement.classList.remove('dark') : document.documentElement.classList.add('dark');
+  document.documentElement.classList.add('nightwind');
+})()
+`;
 
 export default App;

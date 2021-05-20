@@ -33,9 +33,9 @@ return(
                         <p className="max-w-md mt-2 text-gray-800">Community service for reviewing new popular crypto projects, coins and tokens.</p>
 
                         <div className="flex mt-4 -mx-2">
-                            <a onClick={() => openInNewTab("https://t.me/cryptox_info")} className="text-gray-500 hover:bg-gray-200 hover:text-gray-500 inline-flex px-3 py-2 mx-3 rounded-md text-base font-medium items-center">
+                            <button onClick={() => openInNewTab("https://t.me/cryptox_info")} className="text-gray-500 hover:bg-gray-200 hover:text-gray-500 inline-flex px-3 py-2 mx-3 rounded-md text-base font-medium items-center">
                                 <ImTelegram size={20}/>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -53,9 +53,9 @@ return(
                 </div>
             </div>
 
-            <div className="h-px my-6 border-none bg-gray-600">
+            <div className="h-px my-6 border-none bg-gray-400">
                 <div>
-                    <p className="text-sm text-center py-2 text-gray-800 font-light">© CRYPTOx 2021 - All rights reserved.</p>
+                    <p className="text-sm text-center py-2 text-gray-500 font-light">© CRYPTOx 2021 - All rights reserved.</p>
                 </div>
             </div>
         </div>

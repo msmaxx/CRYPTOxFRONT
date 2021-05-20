@@ -1,21 +1,22 @@
-
-import { RiSendPlaneLine } from 'react-icons/ri';
+import {RiSendPlaneLine} from 'react-icons/ri';
 import promoteImage from '../../assets/promote.jpg'
 
 export default function AddNewCoin() {
     return (
-
-        <header className="bg-white shadow">
+        <div className="py-6 px-6 md:py-12 bg-gray-50">
             <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 <h1 className="text-3xl font-bold text-gray-900">Add new coin</h1>
             </div>
 
-
             <section className="text-gray-600 body-font relative">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="flex flex-col text-center w-full mb-12">
-                        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Add your coin in our platform! !(temporarily suspended!)!</h1>
-                        <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Send us an application for consideration to add your coin to our system.</p>
+                        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Add your coin in
+                            our platform!</h1>
+                        <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Send us an application for
+                            consideration to add your coin to our system.</p>
+
+                        <p className="lg:w-2/3 mx-auto leading-relaxed text-base">! TEMPORARILY SUSPENDED !</p>
                     </div>
                     <div className="lg:w-1/2 md:w-2/3 mx-auto">
                         <div className="flex flex-wrap -m-2">
@@ -37,7 +38,8 @@ export default function AddNewCoin() {
 
                             <div className="p-2 w-1/2">
                                 <div className="relative">
-                                    <label htmlFor="contract" className="leading-7 text-sm text-gray-600">Contract Addres</label>
+                                    <label htmlFor="contract" className="leading-7 text-sm text-gray-600">Contract
+                                        Addres</label>
                                     <input type="text" id="contract" name="contract"
                                            className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
                                 </div>
@@ -45,7 +47,8 @@ export default function AddNewCoin() {
 
                             <div className="p-2 w-1/2">
                                 <div className="relative">
-                                    <label htmlFor="date" className="leading-7 text-sm text-gray-600">Launch Date</label>
+                                    <label htmlFor="date" className="leading-7 text-sm text-gray-600">Launch
+                                        Date</label>
                                     <input type="text" id="date" name="date"
                                            className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
                                 </div>
@@ -53,7 +56,8 @@ export default function AddNewCoin() {
 
                             <div className="p-2 w-1/2">
                                 <div className="relative">
-                                    <label htmlFor="date" className="leading-7 text-sm text-gray-600">Website Link</label>
+                                    <label htmlFor="date" className="leading-7 text-sm text-gray-600">Website
+                                        Link</label>
                                     <input type="text" id="website" name="website"
                                            className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
                                 </div>
@@ -61,7 +65,8 @@ export default function AddNewCoin() {
 
                             <div className="p-2 w-1/2">
                                 <div className="relative">
-                                    <label htmlFor="date" className="leading-7 text-sm text-gray-600">Telegram Link</label>
+                                    <label htmlFor="date" className="leading-7 text-sm text-gray-600">Telegram
+                                        Link</label>
                                     <input type="text" id="telegram" name="telegram"
                                            className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
                                 </div>
@@ -69,8 +74,10 @@ export default function AddNewCoin() {
 
                             <div className="p-2 w-full">
                                 <div className="relative">
-                                    <label htmlFor="message" className="leading-7 text-sm text-gray-600">Other Information (Description and etc..)</label>
-                                    <textarea id="message" name="message"  className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"/>
+                                    <label htmlFor="message" className="leading-7 text-sm text-gray-600">Other
+                                        Information (Description and etc..)</label>
+                                    <textarea id="message" name="message"
+                                              className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"/>
                                 </div>
                             </div>
                             <div className="p-2 w-full">
@@ -84,6 +91,6 @@ export default function AddNewCoin() {
                     </div>
                 </div>
             </section>
-        </header>
-)
+        </div>
+    )
 }

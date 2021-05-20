@@ -47,15 +47,15 @@ export default function Navbar() {
                                     </div>
                                 </div>
                                 <div className="hidden md:block">
-                                <a onClick={() => nightwind.toggle()} className="text-gray-500 hover:bg-gray-200 hover:text-gray-500 inline-flex px-3 py-2 mx-3 rounded-md text-base font-medium items-center">
+                                <button onClick={() => nightwind.toggle()} className="text-gray-500 hover:bg-gray-200 hover:text-gray-500 inline-flex px-3 py-2 mx-3 rounded-md text-base font-medium items-center">
                                     <RiMoonLine size={20}/>
-                                </a>
+                                </button>
                                 </div>
 
                                 <div className="-mr-2 flex md:hidden">
-                                    <a onClick={() => nightwind.toggle()} className="text-gray-500 hover:bg-gray-200 hover:text-gray-500 inline-flex px-3 py-2 mx-3 rounded-md text-base font-medium items-center">
+                                    <button onClick={() => nightwind.toggle()} className="text-gray-500 hover:bg-gray-200 hover:text-gray-500 inline-flex px-3 py-2 mx-3 rounded-md text-base font-medium items-center">
                                         <RiMoonLine size={20}/>
-                                    </a>
+                                    </button>
                                     {/* Mobile menu button */}
                                     <Disclosure.Button
                                         className="bg-gray-200 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">

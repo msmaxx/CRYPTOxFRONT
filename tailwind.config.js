@@ -2,8 +2,13 @@ module.exports = {
 
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
+    heme: {
+      nightwind: {
+        typography: true,
+      },
+    },
     fontFamily: {
-      custom: ['Montserrat', 'sans-serif'],
+      sans: ['Montserrat', 'sans-serif'],
     },
     screens: {
       'sm': '640px',
@@ -26,6 +31,8 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("nightwind")],
+  plugins: [
+      require("nightwind")
+  ],
 }
 

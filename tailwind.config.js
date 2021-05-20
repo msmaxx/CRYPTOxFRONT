@@ -1,4 +1,5 @@
 module.exports = {
+
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
     screens: {
@@ -22,7 +23,6 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
-
+  plugins: [require("nightwind")],
 }
 

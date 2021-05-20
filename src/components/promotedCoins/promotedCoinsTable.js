@@ -35,8 +35,8 @@ const BestCoinsTable = (props) => {
             </thead>
             <tbody className="bg-green-50 text-gray-600 dark:text-gray-100">
             {coins.map((token => (
-                <tr>
-                    <td className="sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800">
+                <tr className="">
+                    <td className="sm:p-3 py-2 px-1 border-b border-gray-200 whitespace-nowrap">
                         <div className="flex items-center">
                             <div className="flex items-center">
                                 <div className="flex-shrink-0 h-10 w-10">

@@ -1,4 +1,5 @@
 import {BrowserRouter as Router, Route } from "react-router-dom";
+import nightwind from "nightwind/helper"
 
 import Navbar from "./components/navbar";
 import HomePage from "./components/homePage";
@@ -11,7 +12,9 @@ import AddNewCoin from "./components/addNewCoin/addNewCoin";
 
 function App() {
   return(
-        <Router>
+      <div>
+          <script dangerouslySetInnerHTML={{ __html: nightwind.init() }} />
+          <Router>
             <Navbar/>
             <Route exact path="/" component={HomePage} />
             <Route path="/currencies/:id" component={CoinPage} />
@@ -19,6 +22,7 @@ function App() {
             <Route path="/add-new-coin/" component={AddNewCoin} />
             <Footer/>
         </Router>
+      </div>
   );
 }
 

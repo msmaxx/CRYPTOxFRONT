@@ -1,3 +1,4 @@
+import React, { useEffect} from "react";
 import {BrowserRouter as Router, Route } from "react-router-dom";
 import nightwind from "nightwind/helper";
 
@@ -10,11 +11,14 @@ import Footer from "./components/footer";
 import PromotePage from "./components/promote/promotePage";
 import AddNewCoin from "./components/addNewCoin/addNewCoin";
 
+
 function App() {
+    useEffect(() => {
+        nightwind.initNightwind()
+    }, []);
   return(
       <div>
           <Router>
-              <script type="text/ja vascript">{nightwind.init()}</script>
             <Navbar/>
             <Route exact path="/" component={HomePage} />
             <Route path="/currencies/:id" component={CoinPage} />

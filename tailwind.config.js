@@ -1,4 +1,8 @@
 module.exports = {
+  experimental: {
+    applyComplexClasses: true,
+    darkModeVariant: true
+  },
   darkMode: "class",
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {

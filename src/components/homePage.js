@@ -1,7 +1,6 @@
 import DisplayPromotedCoinsTable from "./promotedCoins/displayPromotedCoinsTable";
 import DisplayBestCoinTable from "./bestCoins/displayBestCoinTable";
 
-
 export default function HomePage() {
     return (
 

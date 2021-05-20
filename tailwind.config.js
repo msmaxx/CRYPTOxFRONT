@@ -2,6 +2,9 @@ module.exports = {
 
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
+    fontFamily: {
+      custom: ['Montserrat', 'sans-serif'],
+    },
     screens: {
       'sm': '640px',
       // => @media (min-width: 640px) { ... }

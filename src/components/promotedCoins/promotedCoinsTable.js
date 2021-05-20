@@ -39,7 +39,7 @@ const BestCoinsTable = (props) => {
                     <td className="sm:p-3 py-2 px-1 border-b border-gray-200 whitespace-nowrap">
                         <div className="flex items-center">
                             <div className="flex items-center">
-                                <div className="flex-shrink-0 h-10 w-10">
+                                <div className="flex-shrink-0 h-10 w-10 mx-6">
                                     <Link to={`/currencies/${token.Symbol}`}>
                                         <img className="h-10 w-10 rounded-full cursor-pointer"
                                              src={token.Logo} alt=""/>

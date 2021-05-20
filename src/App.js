@@ -1,5 +1,4 @@
 import {BrowserRouter as Router, Route } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import nightwind from "nightwind/helper";
 
 
@@ -15,9 +14,7 @@ function App() {
   return(
       <div>
           <Router>
-              <Helmet>
-                  <script type="text/ja vascript">{nightwind.init()}</script>
-              </Helmet>
+              <script type="text/ja vascript">{nightwind.init()}</script>
             <Navbar/>
             <Route exact path="/" component={HomePage} />
             <Route path="/currencies/:id" component={CoinPage} />

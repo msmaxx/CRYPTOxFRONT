@@ -1,5 +1,6 @@
 import {BrowserRouter as Router, Route } from "react-router-dom";
 import nightwind from "nightwind/helper"
+import {Helmet} from "react-helmet";
 
 import Navbar from "./components/navbar";
 import HomePage from "./components/homePage";
@@ -13,7 +14,11 @@ import AddNewCoin from "./components/addNewCoin/addNewCoin";
 function App() {
   return(
       <div>
-          <script dangerouslySetInnerHTML={{ __html: nightwind.init() }} />
+          <Helmet>
+              <script>
+                  { nightwind.init() }
+              </script>
+          </Helmet>
           <Router>
             <Navbar/>
             <Route exact path="/" component={HomePage} />

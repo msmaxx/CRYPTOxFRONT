@@ -15,22 +15,18 @@ export default function GetVotingButtons({symbol, id, upVotes, downVotes}) {
 
     const [coinData, setCoinData] = useState(initialCoinDataState)
 
-
     useEffect(() => {
-        const getCoinData = async () => {
-            const {data} = await axios(
-                `https://cryptox-backend.herokuapp.com/coin-lists/?Symbol=${symbol}`,
-            )
-            setCoinData(data)
-        }
-        getCoinData()
-    }, [])
+        axios.get(`https://cryptox-backend.herokuapp.com/coin-lists/?Symbol=${symbol}`,).then(response => {
+            setCoinData(response.data);
+            setLoading(false);
+        })
+    .catch(error => {
+            this.setState({ errorMessage: error.message });
+            console.error('There was an error!', error);
+        })});
 
-    function refreshPage() {
-        window.location.reload(false);
-    }
 
-    const handleDownSubmit = () => {
+   /* const handleDownSubmit = () => {
         setLoading(true);
         setIsError(false);
         const newDownVotes = downVotes + 1
@@ -47,7 +43,7 @@ export default function GetVotingButtons({symbol, id, upVotes, downVotes}) {
             setLoading(false);
             setIsError(true);
         });
-    }
+    }*/
 
     const handleUpSubmit = () => {
         setLoading(true);
@@ -61,7 +57,6 @@ export default function GetVotingButtons({symbol, id, upVotes, downVotes}) {
             setData(res.data);
             setLoading(false);
             localStorage.setItem(symbol, 'UP');
-            refreshPage();
         }).catch(err => {
             setLoading(false);
             setIsError(true);
@@ -75,15 +70,9 @@ export default function GetVotingButtons({symbol, id, upVotes, downVotes}) {
             <div>
                 {coinData.map((token) => (
                     <ul className="inline-flex w-auto my-2 mx-auto">
-                        {/*<li className="mx-1 px-3 py-2 bg-gray-200 hover:bg-gray-700 rounded-lg">
-                            <a className="flex items-center cursor-not-allowed">
-                                <span className="mx-1"> 👎 </span>
-                            </a>
-                        </li>*/}
-                        <li className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 text-l font-bold rounded-lg">
+                        <li key={token.Symbol} className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 text-l font-bold rounded-lg">
                             <a className="font-medium">{token.UpVotes}</a>
                         </li>
-
                         <li className="mx-1 px-3 py-2 bg-gray-200  hover:bg-gray-700 rounded-lg">
                             <a className="flex items-center cursor-not-allowed">
                                 <span className="mx-1"> 👍 </span>
@@ -101,15 +90,9 @@ export default function GetVotingButtons({symbol, id, upVotes, downVotes}) {
             <div>
                 {coinData.map((token) => (
                     <ul className="flex">
-                       {/* <li className="mx-1 px-3 py-2 bg-gray-200 hover:bg-gray-700 rounded-lg">
-                            <a className="flex items-center cursor-pointer" onClick={handleDownSubmit}>
-                                <span className="mx-1"> 👎 </span>
-                            </a>
-                        </li>*/}
-                        <li className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 text-l font-bold rounded-lg">
-                            <a className="font-medium">{token.DownVotes}</a>
+                        <li key={token.Symbol} className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 text-l font-bold rounded-lg">
+                            <a className="font-medium">{token.UpVotes}</a>
                         </li>
-
                         <li className="mx-1 px-3 py-2 bg-gray-200  hover:bg-gray-700 rounded-lg">
                             <a className="flex items-center cursor-pointer" onClick={handleUpSubmit}>
                                 <span className="mx-1"> 👍 </span>

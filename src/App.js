@@ -11,7 +11,7 @@ import Footer from "./components/footer";
 import PromotePage from "./components/promote/promotePage";
 import AddNewCoin from "./components/addNewCoin/addNewCoin";
 
-nightwind.init()
+eval(nightwind.init());
 
 function App() {
   return(

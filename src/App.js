@@ -11,14 +11,11 @@ import Footer from "./components/footer";
 import PromotePage from "./components/promote/promotePage";
 import AddNewCoin from "./components/addNewCoin/addNewCoin";
 
+nightwind.init()
+
 function App() {
   return(
       <div>
-          <Helmet>
-              <script>
-                  { nightwind.init() }
-              </script>
-          </Helmet>
           <Router>
             <Navbar/>
             <Route exact path="/" component={HomePage} />

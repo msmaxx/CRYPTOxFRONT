@@ -47,7 +47,7 @@ return(
                             <h3 className="uppercase text-gray-800">Donate</h3>
                             <span className="max-w-md mt-2 text-sm text-gray-700">If you want to support this project, you can send any amount to the development of this platform:</span>
                             <span
-                                className="block mt-2 text-sm text-gray-800 font-bold">{contractDonate}</span>
+                                className="block mt-2 text-sm text-gray-600 font-bold">{contractDonate}</span>
                         </div>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ import DisplayBestCoinTable from "./bestCoins/displayBestCoinTable";
 export default function HomePage() {
     return (
 
-        <div className="py-6 px-6 md:py-12 bg-gray-50">
+        <div className="py-6 md:py-12 bg-gray-50">
             <div className="container mx-auto my-5">
                 <div className="lg:flex lg:items-center lg:justify-between">
                     <div className="flex-1 min-w-0 my-6">

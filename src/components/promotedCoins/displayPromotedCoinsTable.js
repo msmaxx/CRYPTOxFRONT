@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import PromotedCoinsTable from "./promotedCoinsTable";
 import WithTableLoading from "../withTableLoading";
 import axios from "axios";
@@ -16,10 +16,8 @@ function DisplayPromotedCoinsTable() {
         });
     }, [setAppState]);
 
-
     return (
-         <ListLoading isLoading={appState.loading} coins={appState.coins} />
-
+        <ListLoading isLoading={appState.loading} coins={appState.coins}/>
     );
 }
 

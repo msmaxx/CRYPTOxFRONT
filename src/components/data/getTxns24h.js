@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import PuffLoader from "react-spinners/PuffLoader";
-import GetPrice from "./getPrice";
-import Get24HChange from "./get24HChange";
 
 export default function GetTxns24h({contractAddress}) {
     const [isLoading, setLoading] = useState(true);
@@ -40,7 +38,8 @@ export default function GetTxns24h({contractAddress}) {
                 <h2 className="text-sm">
                     {txns24h}
                 </h2>
-                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                <span
+                    className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                         {txns24hChange}
             </span>
             </div>

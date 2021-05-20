@@ -39,7 +39,8 @@ export default function GetLiquidityUSD({contractAddress}) {
                 <h2 className="text-sm">
                     ${liquidityUSD}
                 </h2>
-                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                <span
+                    className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                         {liquidityUSDChange}
             </span>
             </div>

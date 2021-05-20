@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import BestCoinsTable from "./bestCoinsTable";
 import WithTableLoading from "../withTableLoading";
 import axios from "axios";
-
 
 function DisplayBestCoinTable() {
     const ListLoading = WithTableLoading(BestCoinsTable);
@@ -19,8 +18,7 @@ function DisplayBestCoinTable() {
 
 
     return (
-         <ListLoading isLoading={appState.loading} coins={appState.coins} />
-
+        <ListLoading isLoading={appState.loading} coins={appState.coins}/>
     );
 }
 

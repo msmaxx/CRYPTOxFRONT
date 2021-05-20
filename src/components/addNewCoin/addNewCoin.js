@@ -1,5 +1,4 @@
 import {RiSendPlaneLine} from 'react-icons/ri';
-import promoteImage from '../../assets/promote.jpg'
 
 export default function AddNewCoin() {
     return (
